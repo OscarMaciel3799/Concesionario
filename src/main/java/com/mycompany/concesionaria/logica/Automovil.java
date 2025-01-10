@@ -1,12 +1,13 @@
 package com.mycompany.concesionaria.logica;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Automovil {
+public class Automovil implements Serializable {
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE)
         private int id;
@@ -15,7 +16,7 @@ public class Automovil {
         private String motor;
         private String color;
         private String patente;
-        private int CantidadPuertas;
+        private int cantidadPuertas;
 
     public Automovil() {
     }
@@ -27,7 +28,7 @@ public class Automovil {
         this.motor = motor;
         this.color = color;
         this.patente = patente;
-        this.CantidadPuertas = CantidadPuertas;
+        this.cantidadPuertas = CantidadPuertas;
     }
 
     public int getId() {
@@ -79,16 +80,16 @@ public class Automovil {
     }
 
     public int getCantidadPuertas() {
-        return CantidadPuertas;
+        return cantidadPuertas;
     }
 
     public void setCantidadPuertas(int CantidadPuertas) {
-        this.CantidadPuertas = CantidadPuertas;
+        this.cantidadPuertas = CantidadPuertas;
     }
 
     @Override
     public String toString() {
-        return "Automovil{" + "id=" + id + ", modelo=" + modelo + ", carca=" + marca + ", motor=" + motor + ", color=" + color + ", patente=" + patente + ", CantidadPuertas=" + CantidadPuertas + '}';
+        return "Automovil{" + "id=" + id + ", modelo=" + modelo + ", carca=" + marca + ", motor=" + motor + ", color=" + color + ", patente=" + patente + ", CantidadPuertas=" + cantidadPuertas + '}';
     }
         
         

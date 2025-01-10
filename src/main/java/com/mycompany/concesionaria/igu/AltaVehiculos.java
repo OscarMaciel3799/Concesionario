@@ -1,10 +1,12 @@
 
 package com.mycompany.concesionaria.igu;
 
+import com.mycompany.concesionaria.logica.ControladoraLogica;
+
 
 public class AltaVehiculos extends javax.swing.JFrame {
 
-    
+    ControladoraLogica control=new ControladoraLogica();
     public AltaVehiculos() {
         initComponents();
     }
@@ -53,8 +55,18 @@ public class AltaVehiculos extends javax.swing.JFrame {
         jLabel8.setText("Cantidad de Puertas:");
 
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -156,6 +168,27 @@ public class AltaVehiculos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+        String modelo=txtModelo.getText();
+        String marca=txtMarca.getText();
+        String motor=txtMotor.getText();
+        String color=txtColor.getText();
+        String patente=txtPatente.getText();
+        int cantidadPuertas=Integer.parseInt(txtCantPuerta.getText());
+        
+        control.guardarAutomovil(modelo,marca,motor,color,patente,cantidadPuertas); 
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        txtModelo.setText("");
+        txtMarca.setText("");
+        txtMotor.setText("");
+        txtColor.setText("");
+        txtPatente.setText("");
+        txtCantPuerta.setText("");
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
