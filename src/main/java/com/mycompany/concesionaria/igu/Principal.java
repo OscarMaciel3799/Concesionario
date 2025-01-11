@@ -105,7 +105,9 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAltaActionPerformed
 
     private void btnConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasActionPerformed
-        // TODO add your handling code here:
+        Consultas consultas=new Consultas();
+        consultas.setVisible(true);
+        consultas.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnConsultasActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
